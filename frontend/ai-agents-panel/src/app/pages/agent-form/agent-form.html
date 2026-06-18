@@ -1,0 +1,20 @@
+<h2 class="title">Add New Agent</h2>
+
+<div class="form-container">
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <label>Name</label>
+  <input [(ngModel)]="name" placeholder="Enter agent name">
+
+  <label>Role</label>
+  <input [(ngModel)]="role" placeholder="Enter agent role">
+
+  <label>Description</label>
+  <textarea [(ngModel)]="description" placeholder="Enter description"></textarea>
+
+  <button mat-flat-button color="primary" (click)="addAgent()">
+    Add Agent
+  </button>
+</div>

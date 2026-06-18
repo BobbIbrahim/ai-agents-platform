@@ -1,0 +1,47 @@
+### 400 Bad Request - Create agent with empty fields
+POST http://localhost:8080/api/agents
+Content-Type: application/json
+
+{
+  "name": "",
+  "role": "",
+  "description": ""
+}
+
+
+### 400 Bad Request - Create agent with spaces only
+POST http://localhost:8080/api/agents
+Content-Type: application/json
+
+{
+  "name": "   ",
+  "role": "   ",
+  "description": "   "
+}
+
+
+### 400 Bad Request - Update agent with invalid fields
+PUT http://localhost:8080/api/agents/1
+Content-Type: application/json
+
+{
+  "name": "",
+  "role": "",
+  "description": ""
+}
+
+### 201 Created - Create valid agent
+POST http://localhost:8080/api/agents
+Content-Type: application/json
+
+{
+  "name": "Validation Test Agent",
+  "role": "Tester",
+  "description": "This should be saved successfully"
+}
+
+### Direct backend
+GET http://localhost:8081/api/agents
+
+### Through gateway
+GET http://localhost:8080/api/agents

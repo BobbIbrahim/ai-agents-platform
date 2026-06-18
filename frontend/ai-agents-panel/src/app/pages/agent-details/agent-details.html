@@ -1,0 +1,50 @@
+<div class="loading-message" *ngIf="isLoading">
+  Loading agent...
+</div>
+
+<div class="not-found-message" *ngIf="!isLoading && notFound">
+  Agent not found.
+</div>
+
+<form class="details-container" *ngIf="!isLoading && agent" (ngSubmit)="saveAgent()">
+  <h2>Edit Agent</h2>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      type="text"
+      name="name"
+      [(ngModel)]="agent.name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role</label>
+    <input
+      id="role"
+      type="text"
+      name="role"
+      [(ngModel)]="agent.role"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      name="description"
+      [(ngModel)]="agent.description"
+    ></textarea>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="back-btn" (click)="goBack()">
+      Back
+    </button>
+
+    <button type="submit" class="save-btn">
+      Save
+    </button>
+  </div>
+</form>

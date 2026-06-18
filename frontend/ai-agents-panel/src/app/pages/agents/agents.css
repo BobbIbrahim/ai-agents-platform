@@ -1,0 +1,92 @@
+.title {
+  text-align: center;
+  margin: 28px 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.success-message {
+  width: fit-content;
+  margin: 0 auto 24px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background-color: #dcfce7;
+  color: #166534;
+  font-weight: 600;
+}
+
+.agent-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  padding: 0 32px 32px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  min-height: 180px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+}
+
+.card h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.card h3 a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: #2563eb;
+}
+
+.card p {
+  margin: 10px 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.delete-btn {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .agent-list {
+    grid-template-columns: 1fr;
+    padding: 0 20px 24px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}

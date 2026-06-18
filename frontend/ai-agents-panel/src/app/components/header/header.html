@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <h2>AI Control Panel</h2>
+
+  <div class="links">
+    <a
+      routerLink="/"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Dashboard
+    </a>
+
+    <a
+      routerLink="/agents"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Agents
+    </a>
+
+    <a
+      routerLink="/agents/new"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Add Agent
+    </a>
+  </div>
+</nav>

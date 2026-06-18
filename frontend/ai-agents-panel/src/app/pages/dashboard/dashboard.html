@@ -1,0 +1,54 @@
+<section class="dashboard">
+  <div class="hero">
+    <h1>AI Agents Control Panel</h1>
+    <p>Monitor and manage your AI agents from one simple dashboard.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Total Agents</span>
+      <strong>{{ agentCount }}</strong>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">Unique Roles</span>
+      <strong>{{ roleCount }}</strong>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">Latest Agent</span>
+      <strong *ngIf="latestAgent">{{ latestAgent.name }}</strong>
+      <strong *ngIf="!latestAgent">None</strong>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="panel">
+      <h2>Recent Agents</h2>
+
+      <div class="agent-row" *ngFor="let agent of agents.slice(-3).reverse()">
+        <div>
+          <h3>{{ agent.name }}</h3>
+          <p>{{ agent.role }}</p>
+        </div>
+        <span>#{{ agent.id }}</span>
+      </div>
+
+      <p class="empty-message" *ngIf="agents.length === 0">
+        No agents available yet.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Project Status</h2>
+
+      <ul class="status-list">
+        <li>Routing configured</li>
+        <li>Agents list working</li>
+        <li>Add agent working</li>
+        <li>Delete agent working</li>
+        <li>Edit agent working</li>
+      </ul>
+    </div>
+  </div>
+</section>

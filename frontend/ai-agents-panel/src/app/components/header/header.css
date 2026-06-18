@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 16px 32px;
+  color: white;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.links a:hover {
+  background: #334155;
+}
+
+.active-link {
+  background: #2563eb;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
