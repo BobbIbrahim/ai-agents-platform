@@ -23,6 +23,16 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  discovery-server:
+    build:
+      context: ./infrastructure/discovery-server
+    container_name: ai-agents-discovery-server
+    ports:
+      - "8761:8761"
+    depends_on:
+      - rabbitmq
+      - postgres
+
 volumes:
   rabbitmq-data:
   postgres-data:
