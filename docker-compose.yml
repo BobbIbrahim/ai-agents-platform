@@ -33,6 +33,27 @@ services:
       - rabbitmq
       - postgres
 
+  backend:
+    build:
+      context: ./backend/ai-agents-backend
+    container_name: ai-agents-backend
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/ai-agents-DB
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USERNAME: guest
+      RABBITMQ_PASSWORD: guest
+      EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
+    depends_on:
+      - postgres
+      - rabbitmq
+      - discovery-server
+
+
 volumes:
   rabbitmq-data:
   postgres-data:
